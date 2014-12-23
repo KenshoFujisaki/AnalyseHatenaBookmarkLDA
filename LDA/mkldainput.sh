@@ -1,11 +1,4 @@
 #!/bin/sh
-#mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "select id from url;" | \
-#	xargs -P1 -I{} bash -c \
-#	  'mysql -uhatena -phatena -Dhatena_bookmark -e "select * from url_morpheme where url_id = {};" | 
-#     awk '"'"'NR>1{print $3 ":" $4}'"'"' | 
-#		 ruby -ne '"'"'BEGIN{agg=""}; agg=agg+$_.sub(/\n/," ");END{puts agg}'"'"
-
-
 mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "
   SELECT 
     concat(
