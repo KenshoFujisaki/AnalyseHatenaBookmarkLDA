@@ -1,6 +1,6 @@
 AnalyseHatenaBookmarkLDA
 ========================
-[はてブ記事を用いた興味分析](http://d.hatena.ne.jp/ni66ling/20141223/1419323806 "はてブ記事を用いた興味分析")のLDAによるトピック解析のためのスクリプトです．  
+[はてブ記事を用いた興味分析](http://d.hatena.ne.jp/ni66ling/20141223/1419323806 "はてブ記事を用いた興味分析")の[LDAによるトピック解析](http://d.hatena.ne.jp/ni66ling/20141223/1419350700 "LDAによるトピック解析")のためのスクリプトです．  
 事前に[データの準備](https://github.com/KenshoFujisaki/CreateHatenaBookmarkLogDB "データ準備")が完了していることを前提とします．
 
 本スクリプトにより，はてブ記事のトピック解析結果を下のようなワードクラウドに出力できます．
@@ -50,7 +50,7 @@ $ ./lda -N [number_of_topics] lda_input.dat lda_output
 $ cd ./LDA
 $ ./parseBeta lda_output.beta [number_of_topics] [number_of_rankings]
 ```
-[number_of_topics]にはトピック数を指定します．これは2.の値と一致する必要があります．
+[number_of_topics]にはトピック数を指定します．これは2.の値と一致する必要があります．  
 [number_of_rankings]には出力する単語数を指定します．これはワードクラウドに表示するおおよその単語数です．例えば1000など．
 ##### 4. 結果の確認
 結果は「./LDA/wordcloud/visualize_csv/lda_output/topic[トピック番号].png」に出力されます．  
