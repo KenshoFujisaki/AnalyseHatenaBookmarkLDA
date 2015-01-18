@@ -1,5 +1,12 @@
 #!/bin/sh
+
+# データの取得
 mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "
+  # group_concatの上限値を引き上げ
+  # ref: http://blog.katty.in/3915
+  SET group_concat_max_len = 10000000;
+
+  # データの取得
   SELECT 
     concat(
       count(*), 
