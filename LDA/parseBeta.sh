@@ -60,7 +60,7 @@ cat $input_file | ruby -ne '
 				for word_id in 0..output_length-1;
 					morpheme_score = sorted_ar[topic_id][word_id][0];
 					morpheme_id = sorted_ar[topic_id][word_id][1];
-					morpheme_name = `mysql -N -uhatena -phatena -Dhatena_bookmark -e "select name from morpheme where id = #{morpheme_id}"`;
+          morpheme_name = `mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "select name from morpheme where id = #{morpheme_id}" 2> /dev/null`;
 					print morpheme_name.sub(/\n/,"") + " ";
 					f.write(morpheme_name.sub(/\n/,"") + "," + "#{morpheme_score}" + "\n");
 				end;
