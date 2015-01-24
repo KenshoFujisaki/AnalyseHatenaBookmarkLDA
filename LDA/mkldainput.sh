@@ -21,4 +21,4 @@ mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "
   WHERE 
     NOT EXISTS (SELECT 1 FROM stoplist WHERE stoplist.morpheme_id = url_morpheme.morpheme_id) 
   GROUP BY url.id 
-  ORDER BY url.id DESC;"
+  ORDER BY url.id DESC;" 2> /dev/null
