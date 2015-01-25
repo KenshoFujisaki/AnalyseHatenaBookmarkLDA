@@ -18,6 +18,7 @@ mysql -A -N -uhatena -phatena -Dhatena_bookmark -e "
     ) 
   FROM url_morpheme 
     LEFT JOIN url ON url_morpheme.url_id = url.id 
+    LEFT JOIN morpheme ON url_morpheme.morpheme_id = morpheme.id 
   WHERE 
     NOT EXISTS (SELECT 1 FROM stoplist WHERE stoplist.morpheme_id = url_morpheme.morpheme_id) 
   GROUP BY url.id 
